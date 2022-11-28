@@ -33,6 +33,7 @@
                     v-for="(miniatura, index) in slides"
                     class="thumb"
                     :class="activeImage === index ? 'active' : ''"
+                    @click="activeImage = index"
                     >
                         <img :src="miniatura.image" :alt="miniatura.title" />
                     </div>
