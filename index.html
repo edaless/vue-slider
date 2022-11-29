@@ -25,14 +25,21 @@
                         </p>
                     </div>
                 </div>
-
+                <!-- colonna laterale di miniature-->
                 <div class="thumbs">
+                    <!-- due tasti per spostarsi -->
                     <div class="prev" @click="prevImage"></div>
                     <div class="next" @click="nextImage"></div>
+
+                    <!-- effettiva miniatura, si moltiplica con il v-for,
+                    l'index è il numero di miniatura (0-4), 
+                    al click assegna all'activeImage l'index della miniatura
+                    su cui hai premuto-->
                     <div 
                     v-for="(miniatura, index) in slides"
                     class="thumb"
                     :class="activeImage === index ? 'active' : ''"
+                    
                     @click="activeImage = index"
                     >
                         <img :src="miniatura.image" :alt="miniatura.title" />
